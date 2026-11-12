@@ -1,0 +1,614 @@
+[
+  {
+    "redemption_id": "RDM-2026-00000001",
+    "account_id": "LOY-10089",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000001"
+  },
+  {
+    "redemption_id": "RDM-2026-00000002",
+    "account_id": "LOY-10121",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000002"
+  },
+  {
+    "redemption_id": "RDM-2026-00000003",
+    "account_id": "LOY-10122",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000003"
+  },
+  {
+    "redemption_id": "RDM-2026-00000004",
+    "account_id": "LOY-11309",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000004"
+  },
+  {
+    "redemption_id": "RDM-2026-00000005",
+    "account_id": "LOY-11395",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000005"
+  },
+  {
+    "redemption_id": "RDM-2026-00000006",
+    "account_id": "LOY-11696",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000006"
+  },
+  {
+    "redemption_id": "RDM-2026-00000007",
+    "account_id": "LOY-1171",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000007"
+  },
+  {
+    "redemption_id": "RDM-2026-00000008",
+    "account_id": "LOY-11748",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000008"
+  },
+  {
+    "redemption_id": "RDM-2026-00000009",
+    "account_id": "LOY-11811",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000009"
+  },
+  {
+    "redemption_id": "RDM-2026-00000010",
+    "account_id": "LOY-11957",
+    "reward_id": 1,
+    "points_redeemed": 1000,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000010"
+  },
+  {
+    "redemption_id": "RDM-2026-00000011",
+    "account_id": "LOY-12092",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000011"
+  },
+  {
+    "redemption_id": "RDM-2026-00000012",
+    "account_id": "LOY-12133",
+    "reward_id": 1,
+    "points_redeemed": 1000,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000012"
+  },
+  {
+    "redemption_id": "RDM-2026-00000013",
+    "account_id": "LOY-12339",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000013"
+  },
+  {
+    "redemption_id": "RDM-2026-00000014",
+    "account_id": "LOY-12520",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000014"
+  },
+  {
+    "redemption_id": "RDM-2026-00000015",
+    "account_id": "LOY-12535",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000015"
+  },
+  {
+    "redemption_id": "RDM-2026-00000016",
+    "account_id": "LOY-1267",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000016"
+  },
+  {
+    "redemption_id": "RDM-2026-00000017",
+    "account_id": "LOY-12860",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000017"
+  },
+  {
+    "redemption_id": "RDM-2026-00000018",
+    "account_id": "LOY-12932",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000018"
+  },
+  {
+    "redemption_id": "RDM-2026-00000019",
+    "account_id": "LOY-1311",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000019"
+  },
+  {
+    "redemption_id": "RDM-2026-00000020",
+    "account_id": "LOY-13126",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000020"
+  },
+  {
+    "redemption_id": "RDM-2026-00000021",
+    "account_id": "LOY-13373",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000021"
+  },
+  {
+    "redemption_id": "RDM-2026-00000022",
+    "account_id": "LOY-13501",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000022"
+  },
+  {
+    "redemption_id": "RDM-2026-00000023",
+    "account_id": "LOY-13746",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000023"
+  },
+  {
+    "redemption_id": "RDM-2026-00000024",
+    "account_id": "LOY-1387",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000024"
+  },
+  {
+    "redemption_id": "RDM-2026-00000025",
+    "account_id": "LOY-1391",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000025"
+  },
+  {
+    "redemption_id": "RDM-2026-00000026",
+    "account_id": "LOY-13922",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000026"
+  },
+  {
+    "redemption_id": "RDM-2026-00000027",
+    "account_id": "LOY-14547",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000027"
+  },
+  {
+    "redemption_id": "RDM-2026-00000028",
+    "account_id": "LOY-14704",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000028"
+  },
+  {
+    "redemption_id": "RDM-2026-00000029",
+    "account_id": "LOY-15151",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000029"
+  },
+  {
+    "redemption_id": "RDM-2026-00000030",
+    "account_id": "LOY-15210",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000030"
+  },
+  {
+    "redemption_id": "RDM-2026-00000031",
+    "account_id": "LOY-15344",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000031"
+  },
+  {
+    "redemption_id": "RDM-2026-00000032",
+    "account_id": "LOY-15552",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000032"
+  },
+  {
+    "redemption_id": "RDM-2026-00000033",
+    "account_id": "LOY-15720",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000033"
+  },
+  {
+    "redemption_id": "RDM-2026-00000034",
+    "account_id": "LOY-15913",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000034"
+  },
+  {
+    "redemption_id": "RDM-2026-00000035",
+    "account_id": "LOY-16102",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000035"
+  },
+  {
+    "redemption_id": "RDM-2026-00000036",
+    "account_id": "LOY-16300",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000036"
+  },
+  {
+    "redemption_id": "RDM-2026-00000037",
+    "account_id": "LOY-16466",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000037"
+  },
+  {
+    "redemption_id": "RDM-2026-00000038",
+    "account_id": "LOY-17591",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000038"
+  },
+  {
+    "redemption_id": "RDM-2026-00000039",
+    "account_id": "LOY-18005",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000039"
+  },
+  {
+    "redemption_id": "RDM-2026-00000040",
+    "account_id": "LOY-18331",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000040"
+  },
+  {
+    "redemption_id": "RDM-2026-00000041",
+    "account_id": "LOY-18994",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000041"
+  },
+  {
+    "redemption_id": "RDM-2026-00000042",
+    "account_id": "LOY-19554",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000042"
+  },
+  {
+    "redemption_id": "RDM-2026-00000043",
+    "account_id": "LOY-19615",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000043"
+  },
+  {
+    "redemption_id": "RDM-2026-00000044",
+    "account_id": "LOY-19946",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000044"
+  },
+  {
+    "redemption_id": "RDM-2026-00000045",
+    "account_id": "LOY-2090",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000045"
+  },
+  {
+    "redemption_id": "RDM-2026-00000046",
+    "account_id": "LOY-2445",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000046"
+  },
+  {
+    "redemption_id": "RDM-2026-00000047",
+    "account_id": "LOY-3301",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000047"
+  },
+  {
+    "redemption_id": "RDM-2026-00000048",
+    "account_id": "LOY-3544",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000048"
+  },
+  {
+    "redemption_id": "RDM-2026-00000049",
+    "account_id": "LOY-377",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000049"
+  },
+  {
+    "redemption_id": "RDM-2026-00000050",
+    "account_id": "LOY-4115",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000050"
+  },
+  {
+    "redemption_id": "RDM-2026-00000051",
+    "account_id": "LOY-4246",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000051"
+  },
+  {
+    "redemption_id": "RDM-2026-00000052",
+    "account_id": "LOY-4254",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000052"
+  },
+  {
+    "redemption_id": "RDM-2026-00000053",
+    "account_id": "LOY-4703",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000053"
+  },
+  {
+    "redemption_id": "RDM-2026-00000054",
+    "account_id": "LOY-5564",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000054"
+  },
+  {
+    "redemption_id": "RDM-2026-00000055",
+    "account_id": "LOY-5682",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000055"
+  },
+  {
+    "redemption_id": "RDM-2026-00000056",
+    "account_id": "LOY-5865",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000056"
+  },
+  {
+    "redemption_id": "RDM-2026-00000057",
+    "account_id": "LOY-5876",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000057"
+  },
+  {
+    "redemption_id": "RDM-2026-00000058",
+    "account_id": "LOY-6417",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000058"
+  },
+  {
+    "redemption_id": "RDM-2026-00000059",
+    "account_id": "LOY-6954",
+    "reward_id": 1,
+    "points_redeemed": 1000,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000059"
+  },
+  {
+    "redemption_id": "RDM-2026-00000060",
+    "account_id": "LOY-7358",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000060"
+  },
+  {
+    "redemption_id": "RDM-2026-00000061",
+    "account_id": "LOY-7808",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000061"
+  },
+  {
+    "redemption_id": "RDM-2026-00000062",
+    "account_id": "LOY-788",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000062"
+  },
+  {
+    "redemption_id": "RDM-2026-00000063",
+    "account_id": "LOY-7927",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000063"
+  },
+  {
+    "redemption_id": "RDM-2026-00000064",
+    "account_id": "LOY-794",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000064"
+  },
+  {
+    "redemption_id": "RDM-2026-00000065",
+    "account_id": "LOY-8675",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000065"
+  },
+  {
+    "redemption_id": "RDM-2026-00000066",
+    "account_id": "LOY-8858",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000066"
+  },
+  {
+    "redemption_id": "RDM-2026-00000067",
+    "account_id": "LOY-9231",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000067"
+  },
+  {
+    "redemption_id": "RDM-2026-00000068",
+    "account_id": "LOY-9732",
+    "reward_id": 4,
+    "points_redeemed": 500,
+    "redemption_status": "COMPLETED",
+    "redemption_date": "2026-11-12T23:59:59.000",
+    "idempotency_key": "REDEMPTION:RDM-2026-00000068"
+  }
+]

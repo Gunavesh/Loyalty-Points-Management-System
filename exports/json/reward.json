@@ -1,0 +1,52 @@
+[
+  {
+    "reward_id": 1,
+    "reward_name": "?100 Shopping Voucher",
+    "reward_description": "Synthetic shopping voucher worth ?100",
+    "points_cost": 1000,
+    "reward_status": "ACTIVE",
+    "stock_quantity": 497,
+    "effective_from": "2026-11-12T15:23:42.000",
+    "effective_to": null
+  },
+  {
+    "reward_id": 2,
+    "reward_name": "?250 Shopping Voucher",
+    "reward_description": "Synthetic shopping voucher worth ?250",
+    "points_cost": 2500,
+    "reward_status": "ACTIVE",
+    "stock_quantity": 300,
+    "effective_from": "2026-11-12T15:23:42.000",
+    "effective_to": null
+  },
+  {
+    "reward_id": 3,
+    "reward_name": "?500 Shopping Voucher",
+    "reward_description": "Synthetic shopping voucher worth ?500",
+    "points_cost": 5000,
+    "reward_status": "ACTIVE",
+    "stock_quantity": 200,
+    "effective_from": "2026-11-12T15:23:42.000",
+    "effective_to": null
+  },
+  {
+    "reward_id": 4,
+    "reward_name": "Free Delivery",
+    "reward_description": "Synthetic free delivery reward",
+    "points_cost": 500,
+    "reward_status": "ACTIVE",
+    "stock_quantity": 935,
+    "effective_from": "2026-11-12T15:23:42.000",
+    "effective_to": null
+  },
+  {
+    "reward_id": 5,
+    "reward_name": "?1000 Shopping Voucher",
+    "reward_description": "Synthetic shopping voucher worth ?1000",
+    "points_cost": 10000,
+    "reward_status": "ACTIVE",
+    "stock_quantity": 100,
+    "effective_from": "2026-11-12T15:23:42.000",
+    "effective_to": null
+  }
+]

@@ -1,0 +1,5 @@
+tier_id,tier_name,minimum_qualifying_spend,earning_rate,effective_from,effective_to,tier_status
+1,BRONZE,0.0,1.0,2026-01-01,,ACTIVE
+2,SILVER,10000.0,2.0,2026-01-01,,ACTIVE
+3,GOLD,30000.0,3.0,2026-01-01,,ACTIVE
+4,PLATINUM,75000.0,5.0,2026-01-01,,ACTIVE

@@ -1,0 +1,102 @@
+{
+    "customer": {
+        "records": 20000,
+        "csv_file": "exports\\csv\\customer.csv",
+        "json_file": "exports\\json\\customer.json"
+    },
+    "loyaltyaccount": {
+        "records": 20000,
+        "csv_file": "exports\\csv\\loyaltyaccount.csv",
+        "json_file": "exports\\json\\loyaltyaccount.json"
+    },
+    "tier": {
+        "records": 4,
+        "csv_file": "exports\\csv\\tier.csv",
+        "json_file": "exports\\json\\tier.json"
+    },
+    "rule": {
+        "records": 4,
+        "csv_file": "exports\\csv\\rule.csv",
+        "json_file": "exports\\json\\rule.json"
+    },
+    "orders": {
+        "records": 100000,
+        "csv_file": "exports\\csv\\orders.csv",
+        "json_file": "exports\\json\\orders.json"
+    },
+    "orderline": {
+        "records": 300000,
+        "csv_file": "exports\\csv\\orderline.csv",
+        "json_file": "exports\\json\\orderline.json"
+    },
+    "returns": {
+        "records": 12119,
+        "csv_file": "exports\\csv\\returns.csv",
+        "json_file": "exports\\json\\returns.json"
+    },
+    "returnline": {
+        "records": 24172,
+        "csv_file": "exports\\csv\\returnline.csv",
+        "json_file": "exports\\json\\returnline.json"
+    },
+    "pointstransaction": {
+        "records": 143718,
+        "csv_file": "exports\\csv\\pointstransaction.csv",
+        "json_file": "exports\\json\\pointstransaction.json"
+    },
+    "pointslot": {
+        "records": 86870,
+        "csv_file": "exports\\csv\\pointslot.csv",
+        "json_file": "exports\\json\\pointslot.json"
+    },
+    "pointsallocation": {
+        "records": 57088,
+        "csv_file": "exports\\csv\\pointsallocation.csv",
+        "json_file": "exports\\json\\pointsallocation.json"
+    },
+    "reward": {
+        "records": 5,
+        "csv_file": "exports\\csv\\reward.csv",
+        "json_file": "exports\\json\\reward.json"
+    },
+    "redemption": {
+        "records": 68,
+        "csv_file": "exports\\csv\\redemption.csv",
+        "json_file": "exports\\json\\redemption.json"
+    },
+    "expirybatch": {
+        "records": 1,
+        "csv_file": "exports\\csv\\expirybatch.csv",
+        "json_file": "exports\\json\\expirybatch.json"
+    },
+    "pointsdebt": {
+        "records": 0,
+        "csv_file": "exports\\csv\\pointsdebt.csv",
+        "json_file": "exports\\json\\pointsdebt.json"
+    },
+    "pointsdebtsettlement": {
+        "records": 0,
+        "csv_file": "exports\\csv\\pointsdebtsettlement.csv",
+        "json_file": "exports\\json\\pointsdebtsettlement.json"
+    },
+    "ruleapplication": {
+        "records": 86870,
+        "csv_file": "exports\\csv\\ruleapplication.csv",
+        "json_file": "exports\\json\\ruleapplication.json"
+    },
+    "customertierhistory": {
+        "records": 0,
+        "csv_file": "exports\\csv\\customertierhistory.csv",
+        "json_file": "exports\\json\\customertierhistory.json"
+    },
+    "processedrequest": {
+        "records": 0,
+        "csv_file": "exports\\csv\\processedrequest.csv",
+        "json_file": "exports\\json\\processedrequest.json"
+    },
+    "auditevent": {
+        "records": 0,
+        "csv_file": "exports\\csv\\auditevent.csv",
+        "json_file": "exports\\json\\auditevent.json"
+    }
+}

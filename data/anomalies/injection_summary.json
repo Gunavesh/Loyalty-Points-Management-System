@@ -1,0 +1,17 @@
+{
+    "total_anomalies_created": 5,
+    "expected_scenarios": 5,
+    "created_scenarios": [
+        "ACCOUNT_BALANCE_LEDGER_MISMATCH",
+        "REDEMPTION_EXCEEDS_AVAILABLE_POINTS",
+        "RETURNED_ORDER_POINTS_NOT_REVERSED",
+        "DUPLICATE_POINTS_EXPIRY",
+        "TIER_CALCULATED_USING_GROSS_SPEND"
+    ],
+    "unavailable_scenarios": [],
+    "database_modified": false,
+    "output_files": [
+        "data/anomalies/anomaly_input.csv",
+        "data/anomalies/ground_truth.csv"
+    ]
+}

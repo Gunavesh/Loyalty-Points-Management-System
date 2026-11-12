@@ -1,0 +1,38 @@
+[
+  {
+    "tier_id": 1,
+    "tier_name": "BRONZE",
+    "minimum_qualifying_spend": 0.0,
+    "earning_rate": 1.0,
+    "effective_from": "2026-01-01T00:00:00.000",
+    "effective_to": null,
+    "tier_status": "ACTIVE"
+  },
+  {
+    "tier_id": 2,
+    "tier_name": "SILVER",
+    "minimum_qualifying_spend": 10000.0,
+    "earning_rate": 2.0,
+    "effective_from": "2026-01-01T00:00:00.000",
+    "effective_to": null,
+    "tier_status": "ACTIVE"
+  },
+  {
+    "tier_id": 3,
+    "tier_name": "GOLD",
+    "minimum_qualifying_spend": 30000.0,
+    "earning_rate": 3.0,
+    "effective_from": "2026-01-01T00:00:00.000",
+    "effective_to": null,
+    "tier_status": "ACTIVE"
+  },
+  {
+    "tier_id": 4,
+    "tier_name": "PLATINUM",
+    "minimum_qualifying_spend": 75000.0,
+    "earning_rate": 5.0,
+    "effective_from": "2026-01-01T00:00:00.000",
+    "effective_to": null,
+    "tier_status": "ACTIVE"
+  }
+]

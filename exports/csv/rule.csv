@@ -1,0 +1,5 @@
+rule_id,rule_name,rule_type,rule_description,rule_value,effective_from,effective_to,rule_status,created_at
+1,EARNING_BRONZE_PER_100,EARNING,Bronze members earn 1 point per 100 rupees of eligible net spend.,1.0,2025-01-01,,ACTIVE,2026-11-12 14:48:11
+2,EARNING_SILVER_PER_100,EARNING,Silver members earn 2 points per 100 rupees of eligible net spend.,2.0,2025-01-01,,ACTIVE,2026-11-12 14:48:11
+3,EARNING_GOLD_PER_100,EARNING,Gold members earn 3 points per 100 rupees of eligible net spend.,3.0,2025-01-01,,ACTIVE,2026-11-12 14:48:11
+4,EARNING_PLATINUM_PER_100,EARNING,Platinum members earn 5 points per 100 rupees of eligible net spend.,5.0,2025-01-01,,ACTIVE,2026-11-12 14:48:11

@@ -1,0 +1,10 @@
+[
+  {
+    "expiry_batch_id": "EXP-2026-000001",
+    "batch_started_at": "2026-11-12T23:59:59.000",
+    "batch_completed_at": "2026-11-12T23:59:59.000",
+    "batch_status": "COMPLETED",
+    "points_expired": 2611242,
+    "records_processed": 40081
+  }
+]

@@ -1,0 +1,2 @@
+expiry_batch_id,batch_started_at,batch_completed_at,batch_status,points_expired,records_processed
+EXP-2026-000001,2026-11-12 23:59:59,2026-11-12 23:59:59,COMPLETED,2611242,40081

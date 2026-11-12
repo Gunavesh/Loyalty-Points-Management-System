@@ -1,0 +1,6 @@
+reward_id,reward_name,reward_description,points_cost,reward_status,stock_quantity,effective_from,effective_to
+1,?100 Shopping Voucher,Synthetic shopping voucher worth ?100,1000,ACTIVE,497,2026-11-12 15:23:42,
+2,?250 Shopping Voucher,Synthetic shopping voucher worth ?250,2500,ACTIVE,300,2026-11-12 15:23:42,
+3,?500 Shopping Voucher,Synthetic shopping voucher worth ?500,5000,ACTIVE,200,2026-11-12 15:23:42,
+4,Free Delivery,Synthetic free delivery reward,500,ACTIVE,935,2026-11-12 15:23:42,
+5,?1000 Shopping Voucher,Synthetic shopping voucher worth ?1000,10000,ACTIVE,100,2026-11-12 15:23:42,

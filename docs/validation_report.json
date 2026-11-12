@@ -1,0 +1,126 @@
+{
+    "project": "Loyalty Points Management System",
+    "validation_date": "2026-11-12T15:59:52",
+    "database_record_counts": {
+        "customer": 20000,
+        "loyaltyaccount": 20000,
+        "orders": 100000,
+        "orderline": 300000,
+        "returns": 12119,
+        "returnline": 24172,
+        "pointstransaction": 143718,
+        "pointslot": 86870,
+        "pointsallocation": 57088,
+        "redemption": 68,
+        "expirybatch": 1,
+        "reward": 5,
+        "tier": 4,
+        "rule": 4
+    },
+    "transaction_summary": [
+        {
+            "transaction_type": "ACCRUAL",
+            "record_count": 86870,
+            "points_change": 6785448
+        },
+        {
+            "transaction_type": "REDEMPTION",
+            "record_count": 68,
+            "points_change": -35500
+        },
+        {
+            "transaction_type": "RETURN_REVERSAL",
+            "record_count": 16699,
+            "points_change": -382046
+        },
+        {
+            "transaction_type": "EXPIRY",
+            "record_count": 40081,
+            "points_change": -2611242
+        }
+    ],
+    "anomaly_records": 5,
+    "detection_records": 5,
+    "checks_passed": 11,
+    "checks_failed": 0,
+    "overall_status": "PASS",
+    "checks": [
+        {
+            "check": "Core database tables contain records",
+            "actual": 764049,
+            "expected": "> 0",
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Account and ledger reconciliation",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "No negative account balances",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Points lot consistency",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Order amount calculations",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Order line calculations",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Returned quantities do not exceed purchased quantities",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "All expiry batches completed",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "No pending redemptions",
+            "actual": 0,
+            "expected": 0,
+            "status": "PASS",
+            "details": ""
+        },
+        {
+            "check": "Anomaly deliverable files exist",
+            "actual": 6,
+            "expected": 6,
+            "status": "PASS",
+            "details": "All required files found."
+        },
+        {
+            "check": "Anomaly records and detection results match",
+            "actual": 5,
+            "expected": 5,
+            "status": "PASS",
+            "details": ""
+        }
+    ]
+}

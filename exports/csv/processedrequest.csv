@@ -1,0 +1,1 @@
+request_id,idempotency_key,operation_type,account_id,request_status,response_details,created_at,completed_at

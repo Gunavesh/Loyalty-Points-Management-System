@@ -1,0 +1,2 @@
+records_evaluated,accuracy,precision,recall,f1_score,true_positives,true_negatives,false_positives,false_negatives,evaluation_limitation
+5,1.0,1.0,1.0,1.0,5,0,0,0,Only injected positive cases are currently available. Normal control records are needed to measure specificity and false-positive performance.

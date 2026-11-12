@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.streamlit/secrets.toml
+submission_package/
+Loyalty_Points_Management_System_Submission.zip
+logs/
