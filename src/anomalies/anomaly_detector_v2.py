@@ -1,3 +1,4 @@
+
 from pathlib import Path
 import pandas as pd
 from sqlalchemy import text
@@ -12,11 +13,14 @@ def detect_balance_mismatch(connection, account_id, observed):
         SELECT a.current_balance,
                COALESCE(SUM(p.points_change), 0) AS ledger_balance
         FROM loyaltyaccount a
-        LEFT JOIN pointstransaction p ON a.account_id = p.account_id
+        LEFT JOIN pointstransaction p
+            ON a.account_id = p.account_id
         WHERE a.account_id = :account_id
         GROUP BY a.account_id, a.current_balance
     """)
-    row = connection.execute(query, {"account_id": account_id}).mappings().first()
+    row = connection.execute(
+        query, {"account_id": account_id}
+    ).mappings().first()
 
     if row is None:
         return None, "Account not found."
@@ -29,7 +33,11 @@ def detect_balance_mismatch(connection, account_id, observed):
 
 def detect_wrong_tier(connection, account_id, observed):
     account = connection.execute(
-        text("SELECT qualifying_spend FROM loyaltyaccount WHERE account_id=:id"),
+        text("""
+            SELECT qualifying_spend
+            FROM loyaltyaccount
+            WHERE account_id = :id
+        """),
         {"id": account_id}
     ).mappings().first()
 
@@ -64,9 +72,14 @@ def detect_excess_redemption(connection, entity_id, observed):
 
     row = connection.execute(
         text("""
-            SELECT current_balance
-            FROM loyaltyaccount
-            WHERE account_id = :id
+            SELECT
+                a.account_id,
+                COALESCE(SUM(p.points_change), 0) AS ledger_balance
+            FROM loyaltyaccount a
+            LEFT JOIN pointstransaction p
+                ON a.account_id = p.account_id
+            WHERE a.account_id = :id
+            GROUP BY a.account_id
         """),
         {"id": account_id}
     ).mappings().first()
@@ -74,12 +87,12 @@ def detect_excess_redemption(connection, entity_id, observed):
     if row is None:
         return None, "Account not found."
 
-    available = int(row["current_balance"])
+    available = int(row["ledger_balance"])
     detected = float(observed) > available
 
     return detected, (
         f"Redemption points: {observed}; "
-        f"account available balance: {available}."
+        f"available ledger balance: {available}."
     )
 
 
