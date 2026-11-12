@@ -2,11 +2,9 @@
 
 ## 1. Project Overview
 
-The Loyalty Points Management System manages customer loyalty points
-through earning, returns, redemption, and expiry.
+The Loyalty Points Management System manages customer loyalty points through earning, returns, redemption, and expiry.
 
-It maintains transaction history, point lots, allocations, account
-balances, and reconciliation checks.
+It maintains transaction history, point lots, allocations, account balances, and reconciliation checks.
 
 ## 2. Main Features
 
@@ -55,8 +53,7 @@ Synthetic dataset configuration:
 
 Random seed: `20261022`
 
-These are synthetic records and business assumptions, not real customer
-or official YottaFlex data.
+These are synthetic records and business assumptions, not real customer or official YottaFlex data.
 
 ## 5. Points Processing
 
@@ -69,23 +66,49 @@ The system supports:
 5. Transaction-level allocation tracking.
 6. Account balance reconciliation against the ledger.
 
-## 6. Anomaly Scenarios
+## 6. Anomaly Scenarios and Detection
 
 Five controlled anomaly scenarios are included:
 
-1. Account balance differs from ledger balance.
-2. Redemption exceeds available points.
-3. Returned order retains earned points.
-4. Points lot is expired twice.
-5. Tier is calculated using gross spend instead of qualifying spend.
+1. **Account balance mismatch:** Account balance differs from ledger balance.
+2. **Excess redemption:** Redemption exceeds available points.
+3. **Missing return reversal:** Returned order retains earned points.
+4. **Duplicate expiry:** Points lot is expired more than once.
+5. **Incorrect tier calculation:** Tier is calculated using gross spend instead of qualifying spend.
 
 The anomaly input and ground-truth labels are stored separately.
 
-**Important limitation:** The current anomaly detector is a preliminary
-rule-based demonstration using scenario descriptions in the test input.
-Its evaluation contains five injected positive cases and no normal
-control records. The reported 100% metrics therefore do not establish
-real-world detection performance.
+### V1 and V2 Detection
+
+The original V1 detector uses scenario evidence descriptions from the anomaly input.
+
+An improved V2 detector was developed to perform independent database-based checks against business rules.
+
+V2 currently evaluates four scenarios:
+
+| Scenario | Detection check |
+|---|---|
+| ANOM-001 | Compares observed account balance with the actual transaction ledger balance. |
+| ANOM-002 | Compares redemption points with the account's current balance. |
+| ANOM-004 | Compares observed expiry allocation with the recorded expiry allocation. |
+| ANOM-005 | Compares observed tier with the expected tier calculated from qualifying spend. |
+
+**Current V2 results:**
+
+- Total anomaly records: 5
+- Evaluated scenarios: 4
+- Detected anomalies: 4
+- Not evaluated: 1
+- ANOM-003 remains unsupported.
+
+The V2 output is saved to `data/anomalies/anomaly_detection_results_v2.csv`.
+
+**Important limitations:**
+
+- ANOM-002 uses current account balance as a proxy; it does not reconstruct historical available points at the exact redemption time.
+- ANOM-003 requires an independent return-reversal business-rule check.
+- The current dataset contains five injected positive anomaly cases and no normal control records for a complete performance evaluation.
+- The original 100% evaluation metrics do not establish real-world detection performance.
 
 ## 7. Project Structure
 
@@ -117,28 +140,25 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-Configure the MySQL database connection using the environment variables
-expected by `config/db_config.py`.
+Configure the MySQL database connection using the environment variables expected by `config/db_config.py`.
 
 Create the database using the SQL schema in `database/`.
 
 ## 9. Main Execution Commands
 
-Run the commands from the project root with the virtual environment active.
+Run commands from the project root with the virtual environment active.
 
 ```powershell
-python -m src.business_logic.ledger_processor
-python -m src.business_logic.redemption_expiry_processor
-python -m src.anomalies.anomaly_injector
 python -m src.anomalies.anomaly_detector
+python -m src.anomalies.anomaly_detector_v2
 python -m src.anomalies.evaluate_detection
 python -m src.validation.final_validation
 python -m src.validation.export_project
 ```
 
-**Warning:** The ledger and redemption/expiry processors have already
-been executed for this generated database. Do not rerun them against
-the same populated database.
+**Warning:** The ledger and redemption/expiry processors have already been executed for this generated database. Do not rerun them against the same populated database.
+
+The original anomaly injector can overwrite anomaly input and ground-truth files. Do not rerun it unless you intentionally want to regenerate those files.
 
 ## 10. Exports
 
@@ -146,20 +166,25 @@ the same populated database.
 - `exports/json/` - table exports in JSON format
 - `exports/sql/` - MySQL database dump
 
-## 11. Validation
+## 11. Validation and Testing
 
-The latest final validation report recorded 11 passed checks and
-0 failed checks.
+The latest final validation report recorded 11 passed checks and 0 failed checks.
 
-See `data/processed/final_validation_report.json`.
+Automated test results:
+
+```text
+6 passed
+```
+
+See `data/processed/final_validation_report.json` for the final validation report.
 
 ## 12. Limitations
 
 - Data is synthetic.
 - Points debt tables currently contain no records.
-- The anomaly detector requires independent business-rule checks and
-  normal control records before its metrics can be treated as
-  representative performance.
+- ANOM-003 is not yet supported by the V2 anomaly detector.
+- ANOM-002 uses current balance rather than historical available balance.
+- Normal control records are needed for a more complete anomaly detection evaluation.
 - The dashboard and remaining features should be checked before release.
 
 ## 13. Reproducibility

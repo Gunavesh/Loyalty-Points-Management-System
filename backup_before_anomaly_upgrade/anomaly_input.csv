@@ -1,0 +1,6 @@
+anomaly_id,entity_type,entity_id,field_name,clean_value,observed_value,evidence
+ANOM-001,loyaltyaccount,LOY-1,current_balance,16,516,Injected balance differs from the ledger by 500 points.
+ANOM-002,redemption,LOY-1-TEST,points_redeemed,16,616,Injected redemption is greater than the account's available balance.
+ANOM-003,orders,ORD-2026-000001,points_reversed,254,0,Fully returned order has an accrual of 254 points; the injected case retains all earned points.
+ANOM-004,pointslot,341,total_expiry_allocated,35,70,Injected case expires the same points lot twice.
+ANOM-005,loyaltyaccount,LOY-10012,tier_id,1,2,Qualifying spend=1083.77; gross spend=24185.03. Injected tier uses gross spend.
