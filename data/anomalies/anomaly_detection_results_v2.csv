@@ -1,6 +1,6 @@
 anomaly_id,entity_type,entity_id,field_name,observed_value,is_anomaly,evaluation_status,detection_reason
 ANOM-001,loyaltyaccount,LOY-1,current_balance,516,True,EVALUATED,Observed balance: 516; actual ledger balance: 16.
-ANOM-002,redemption,LOY-1-TEST,points_redeemed,616,True,EVALUATED,Redemption points: 616; available ledger balance: 16.
+ANOM-002,redemption,LOY-1-TEST,points_redeemed,616,True,EVALUATED,Synthetic baseline balance: 16; observed redemption: 616.
 ANOM-003,orders,ORD-2026-000001,points_reversed,0,True,EVALUATED,Order fully returned; earned points: 254; observed reversed points: 0.0; actual database reversals: 254.
 ANOM-004,pointslot,341,total_expiry_allocated,70,True,EVALUATED,Observed expiry total: 70; actual recorded expiry allocation: 35.
 ANOM-005,loyaltyaccount,LOY-10012,tier_id,2,True,EVALUATED,Qualifying spend: 1083.77; expected tier: 1; observed tier: 2.
