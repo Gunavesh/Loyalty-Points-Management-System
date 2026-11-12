@@ -18,6 +18,7 @@ def detect_balance_mismatch(connection, account_id, observed):
         WHERE a.account_id = :account_id
         GROUP BY a.account_id, a.current_balance
     """)
+
     row = connection.execute(
         query, {"account_id": account_id}
     ).mappings().first()
@@ -26,6 +27,7 @@ def detect_balance_mismatch(connection, account_id, observed):
         return None, "Account not found."
 
     actual = int(row["ledger_balance"])
+
     return float(observed) != actual, (
         f"Observed balance: {observed}; actual ledger balance: {actual}."
     )
@@ -52,6 +54,7 @@ def detect_wrong_tier(connection, account_id, observed):
     """)).mappings().all()
 
     spend = float(account["qualifying_spend"])
+
     eligible = [
         t for t in tiers
         if float(t["minimum_qualifying_spend"]) <= spend
@@ -61,38 +64,92 @@ def detect_wrong_tier(connection, account_id, observed):
         return None, "No eligible tier found."
 
     expected = int(eligible[-1]["tier_id"])
+
     return float(observed) != expected, (
         f"Qualifying spend: {spend}; expected tier: {expected}; "
         f"observed tier: {observed}."
     )
 
 
-def detect_excess_redemption(connection, entity_id, observed):
-    account_id = entity_id.removesuffix("-TEST")
+def detect_excess_redemption(
+    connection,
+    entity_id,
+    observed,
+    clean_value=None,
+    redemption_id=None
+):
+    # Synthetic anomaly: use its known clean baseline.
+    if entity_id.endswith("-TEST"):
+        if clean_value is None:
+            return None, "Synthetic baseline is missing."
+
+        available = int(float(clean_value))
+        detected = float(observed) > available
+
+        return detected, (
+            f"Synthetic baseline balance: {available}; "
+            f"observed redemption: {observed}."
+        )
+
+    # Real redemption requires its actual redemption ID.
+    if redemption_id is None:
+        return None, "Redemption ID is required for historical evaluation."
+
+    query = text("""
+        SELECT
+            r.redemption_id,
+            r.account_id,
+            r.points_redeemed,
+            p.transaction_id,
+            p.transaction_date,
+            p.created_at,
+
+            COALESCE((
+                SELECT SUM(p2.points_change)
+                FROM pointstransaction p2
+                WHERE p2.account_id = r.account_id
+                  AND (
+                    p2.transaction_date < p.transaction_date
+                    OR (
+                        p2.transaction_date = p.transaction_date
+                        AND p2.created_at < p.created_at
+                    )
+                    OR (
+                        p2.transaction_date = p.transaction_date
+                        AND p2.created_at = p.created_at
+                        AND p2.transaction_id < p.transaction_id
+                    )
+                  )
+            ), 0) AS balance_before
+
+        FROM redemption r
+        JOIN pointstransaction p
+            ON p.redemption_id = r.redemption_id
+
+        WHERE r.redemption_id = :redemption_id
+          AND r.account_id = :account_id
+          AND r.redemption_status = 'COMPLETED'
+    """)
 
     row = connection.execute(
-        text("""
-            SELECT
-                a.account_id,
-                COALESCE(SUM(p.points_change), 0) AS ledger_balance
-            FROM loyaltyaccount a
-            LEFT JOIN pointstransaction p
-                ON a.account_id = p.account_id
-            WHERE a.account_id = :id
-            GROUP BY a.account_id
-        """),
-        {"id": account_id}
+        query,
+        {
+            "redemption_id": redemption_id,
+            "account_id": entity_id
+        }
     ).mappings().first()
 
     if row is None:
-        return None, "Account not found."
+        return None, "Completed redemption transaction not found."
 
-    available = int(row["ledger_balance"])
-    detected = float(observed) > available
+    available = int(row["balance_before"])
+    redeemed = float(observed)
+
+    detected = redeemed > available
 
     return detected, (
-        f"Redemption points: {observed}; "
-        f"available ledger balance: {available}."
+        f"Historical balance before redemption: {available}; "
+        f"redemption points: {redeemed}."
     )
 
 
@@ -218,7 +275,10 @@ def main():
 
             elif field == "points_redeemed":
                 detected, reason = detect_excess_redemption(
-                    connection, entity_id, observed
+                    connection,
+                    entity_id,
+                    observed,
+                    clean_value=row["clean_value"]
                 )
 
             elif field == "total_expiry_allocated":
@@ -252,14 +312,24 @@ def main():
     print("V2 ANOMALY DETECTION COMPLETED")
     print("=" * 50)
     print(f"Records checked: {len(output)}")
-    print(f"Evaluated: {(output['evaluation_status'] == 'EVALUATED').sum()}")
-    print(f"Not evaluated: {(output['evaluation_status'] == 'NOT_EVALUATED').sum()}")
+    print(
+        f"Evaluated: "
+        f"{(output['evaluation_status'] == 'EVALUATED').sum()}"
+    )
+    print(
+        f"Not evaluated: "
+        f"{(output['evaluation_status'] == 'NOT_EVALUATED').sum()}"
+    )
     print(f"Anomalies detected: {output['is_anomaly'].eq(True).sum()}")
     print(f"Results saved: {OUTPUT_FILE}")
+
     print("\nDetection details:")
-    print(output[
-        ["anomaly_id", "is_anomaly", "evaluation_status", "detection_reason"]
-    ].to_string(index=False))
+    print(
+        output[
+            ["anomaly_id", "is_anomaly",
+             "evaluation_status", "detection_reason"]
+        ].to_string(index=False)
+    )
 
 
 if __name__ == "__main__":
