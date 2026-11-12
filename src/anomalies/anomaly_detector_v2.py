@@ -1,4 +1,3 @@
-
 from pathlib import Path
 import pandas as pd
 from sqlalchemy import text
@@ -104,6 +103,79 @@ def detect_duplicate_expiry(connection, lot_id, observed):
     )
 
 
+def detect_missing_return_reversal(connection, order_id, observed):
+    row = connection.execute(text("""
+        SELECT
+            o.order_id,
+            o.order_status,
+
+            (
+                SELECT COUNT(*)
+                FROM orderline ol
+                WHERE ol.order_id = o.order_id
+            ) AS order_line_count,
+
+            (
+                SELECT COUNT(*)
+                FROM orderline ol
+                WHERE ol.order_id = o.order_id
+                  AND COALESCE((
+                      SELECT SUM(rl.returned_quantity)
+                      FROM `returns` r
+                      JOIN returnline rl
+                          ON rl.return_id = r.return_id
+                      WHERE r.order_id = o.order_id
+                        AND r.return_status = 'COMPLETED'
+                        AND rl.order_line_id = ol.order_line_id
+                  ), 0) <> ol.quantity
+            ) AS incomplete_return_lines,
+
+            (
+                SELECT COALESCE(SUM(points_change), 0)
+                FROM pointstransaction
+                WHERE order_id = o.order_id
+                  AND transaction_type = 'ACCRUAL'
+            ) AS earned_points,
+
+            (
+                SELECT COALESCE(SUM(ABS(points_change)), 0)
+                FROM pointstransaction
+                WHERE order_id = o.order_id
+                  AND transaction_type = 'RETURN_REVERSAL'
+            ) AS reversed_points
+
+        FROM orders o
+        WHERE o.order_id = :order_id
+    """), {"order_id": order_id}).mappings().first()
+
+    if row is None:
+        return None, "Order not found."
+
+    if row["order_status"] != "RETURNED":
+        return None, (
+            f"Order is not fully returned. "
+            f"Current status: {row['order_status']}."
+        )
+
+    if row["order_line_count"] == 0 or row["incomplete_return_lines"] > 0:
+        return None, "Order lines are not all fully returned."
+
+    earned = int(row["earned_points"])
+    actual_reversed = int(row["reversed_points"])
+    observed_value = float(observed)
+
+    if earned <= 0:
+        return None, "No original accrual found for the order."
+
+    detected = observed_value != actual_reversed
+
+    return detected, (
+        f"Order fully returned; earned points: {earned}; "
+        f"observed reversed points: {observed_value}; "
+        f"actual database reversals: {actual_reversed}."
+    )
+
+
 def main():
     if not INPUT_FILE.exists():
         raise FileNotFoundError(INPUT_FILE)
@@ -138,6 +210,11 @@ def main():
 
             elif field == "total_expiry_allocated":
                 detected, reason = detect_duplicate_expiry(
+                    connection, entity_id, observed
+                )
+
+            elif field == "points_reversed":
+                detected, reason = detect_missing_return_reversal(
                     connection, entity_id, observed
                 )
 

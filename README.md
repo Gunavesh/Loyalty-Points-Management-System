@@ -19,6 +19,7 @@ It maintains transaction history, point lots, allocations, account balances, and
 - Account-to-ledger reconciliation.
 - Controlled anomaly injection and detection.
 - CSV, JSON, and SQL exports.
+- Database-driven anomaly detection and validation.
 
 ## 3. Technology Stack
 
@@ -72,7 +73,7 @@ Five controlled anomaly scenarios are included:
 
 1. **Account balance mismatch:** Account balance differs from ledger balance.
 2. **Excess redemption:** Redemption exceeds available points.
-3. **Missing return reversal:** Returned order retains earned points.
+3. **Missing return reversal:** Returned order retains earned points without the expected reversal.
 4. **Duplicate expiry:** Points lot is expired more than once.
 5. **Incorrect tier calculation:** Tier is calculated using gross spend instead of qualifying spend.
 
@@ -82,33 +83,33 @@ The anomaly input and ground-truth labels are stored separately.
 
 The original V1 detector uses scenario evidence descriptions from the anomaly input.
 
-An improved V2 detector was developed to perform independent database-based checks against business rules.
+An improved V2 detector performs database-driven checks against business rules rather than relying only on scenario descriptions.
 
-V2 currently evaluates four scenarios:
+V2 currently evaluates all five scenarios:
 
 | Scenario | Detection check |
 |---|---|
 | ANOM-001 | Compares observed account balance with the actual transaction ledger balance. |
 | ANOM-002 | Compares redemption points with the account's current balance. |
+| ANOM-003 | Checks completed returns and compares observed reversal points with actual database reversal transactions. |
 | ANOM-004 | Compares observed expiry allocation with the recorded expiry allocation. |
 | ANOM-005 | Compares observed tier with the expected tier calculated from qualifying spend. |
 
-**Current V2 results:**
+**Latest V2 results:**
 
 - Total anomaly records: 5
-- Evaluated scenarios: 4
-- Detected anomalies: 4
-- Not evaluated: 1
-- ANOM-003 remains unsupported.
+- Evaluated scenarios: 5
+- Detected anomalies: 5
+- Not evaluated: 0
 
 The V2 output is saved to `data/anomalies/anomaly_detection_results_v2.csv`.
 
 **Important limitations:**
 
 - ANOM-002 uses current account balance as a proxy; it does not reconstruct historical available points at the exact redemption time.
-- ANOM-003 requires an independent return-reversal business-rule check.
-- The current dataset contains five injected positive anomaly cases and no normal control records for a complete performance evaluation.
-- The original 100% evaluation metrics do not establish real-world detection performance.
+- The current evaluation contains five injected positive anomaly cases and no normal control records.
+- These results demonstrate detection of the five implemented scenarios, not general real-world detection accuracy.
+- The V2 checks are based on the implemented business rules and available database evidence.
 
 ## 7. Project Structure
 
@@ -168,25 +169,22 @@ The original anomaly injector can overwrite anomaly input and ground-truth files
 
 ## 11. Validation and Testing
 
-The latest final validation report recorded 11 passed checks and 0 failed checks.
+Latest validation results:
 
-Automated test results:
+- Final validation checks passed: 11
+- Final validation checks failed: 0
+- Automated tests passed: 6
 
-```text
-6 passed
-```
-
-See `data/processed/final_validation_report.json` for the final validation report.
+The final validation report is saved at `data/processed/final_validation_report.json`.
 
 ## 12. Limitations
 
-- Data is synthetic.
+- Data is synthetic and does not represent real customer records.
 - Points debt tables currently contain no records.
-- ANOM-003 is not yet supported by the V2 anomaly detector.
-- ANOM-002 uses current balance rather than historical available balance.
+- ANOM-002 uses current account balance rather than historical available balance.
 - Normal control records are needed for a more complete anomaly detection evaluation.
 - The dashboard and remaining features should be checked before release.
 
 ## 13. Reproducibility
 
-The synthetic data uses seed `20261022`.
+The synthetic data uses random seed `20261022`.
